@@ -1,0 +1,18 @@
+version: '3.5'
+services:
+  centos7:
+    image:  centos:7
+    restart: unless-stopped
+    entrypoint: "sleep infinity"
+    networks:
+      -  home
+  ubuntu:
+    image:  ubuntu
+    restart: unless-stopped
+    entrypoint: "sleep infinity"
+    networks:
+      -  home
+networks:
+  home:
+    name:  home
+    driver:  bridge
